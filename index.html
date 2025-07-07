@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bader An">
+    <meta name="description" content="A simple HTML home page">
+    <title>Alarado Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F2F9FE;
+            min-height: 100vh;
+        }
+
+        #logo {
+            width: 160px;
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            height: 90vh;
+            justify-content: space-around;
+        }
+
+        #hero {
+            width: 360px;
+            margin-inline: auto;
+        }
+
+        .headLine {
+            color: #223344;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 35px;
+        }
+
+        .title {
+            width: auto;
+            color: #223344;
+            line-height: 1.4;
+            font-size: 2.75rem;
+            margin-top: -15px;
+        }
+
+        .subtext {
+            color: #909193;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .buttonContainer {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .startButton {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: #2A4DD0;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .demoButton {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2A4DD0;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .demoButton::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #2A4DD0;
+            bottom: -4px;
+            left: 0;
+        }
+
+        .footerContainer {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .childWrapper {
+            display: flex;
+            margin-right: 30px;
+        }
+
+        .footer {
+            color: #909193;
+            font-weight: 500;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: green;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 350px;
+            height: 100%;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 55px;
+            list-style: none;
+        }
+
+        .sidebar a {
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: #909193;
+            font-weight: 600;
+        }
+
+        #hideSidebar {
+            float: right;
+        }
+
+        a.aboutUS {
+            color: #2A4DD0;
+            border-bottom: 2px solid #2A4DD0;
+        }
+
+        #showSidebar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .toggleMode button {
+            width: 100%;
+            background-color: #223344;
+            border: none;
+            cursor: pointer;
+            border-radius: 40px;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        #sun {
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        body.dark {
+            background-color: #111729;
+        }
+
+        body.dark .sidebar {
+            background: linear-gradient(180deg, #000000 0%, #010c17 100%);
+        }
+
+        body.dark .title,
+        body.dark .headLine,
+        body.dark .subtext,
+        body.dark .footer,
+        body.dark .demoButton {
+            color: #F2F9FE;
+        }
+
+        body.dark .demoButton::after {
+            background-color: #F2F9FE;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="logo" src="logoLight.svg" alt="Alarado Logo">
+    <div class="container">
+        <img id="hero" src="hero-image-simple-homepage.png" alt="Hero Image">
+        <p class="headLine">😎 SIMPLE WAY TO COMMUNICATE</p>
+        <h1 class="title">Actions for Accessibility in Design</h1>
+        <p class="subtext">The fastest way to build and deploy websites with reusable components.</p>
+        <div class="buttonContainer">
+            <a href="#" class="startButton">Get Started</a>
+            <a href="#" class="demoButton">Get live demo</a>
+        </div>
+        <div class="footerContainer">
+            <div class="childWrapper">
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e3e3e3">
+                        <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                    </svg></span>
+                <p class="footer">No credit card required</p>
+            </div>
+            <div class="childWrapper">
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e3e3e3">
+                        <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                    </svg></span>
+                <p class="footer">No software to install</p>
+            </div>
+        </div>
+    </div>
+    <nav class="sidebar">
+        <a onclick="hideSidebar()" href="#"><svg id="hideSidebar" xmlns="http://www.w3.org/2000/svg" height="32px"
+                viewBox="0 -960 960 960" width="32px" fill="#333">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg></a><br>
+        <ul>
+            <li><a class="aboutUS" href="#">About us</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Contact</a></li>
+            <li>
+                <div class="toggleMode">
+                    <button onclick="toggleMode()"><svg id="moonLight" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M15 4C15.292 4 15.438 4 15.5781 4.04183C16.192 4.22522 16.4775 4.93111 16.1637 5.48976C16.0921 5.61719 15.8744 5.82779 15.4389 6.249C13.935 7.70352 13 9.74257 13 12C13 14.2574 13.935 16.2965 15.4389 17.751C15.8744 18.1722 16.0921 18.3828 16.1637 18.5102C16.4775 19.0689 16.192 19.7748 15.5781 19.9582C15.438 20 15.292 20 15 20V20C10.5817 20 7 16.4183 7 12C7 7.58172 10.5817 4 15 4V4Z"
+                                fill="#F2F9FE" />
+                        </svg>
+                        <svg id="sun" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle id="sunCircle" cx="12" cy="12" r="4" fill="#223344" />
+                            <path class="sunPath" d="M12 5V3" stroke="#223344" stroke-width="2" stroke-linecap="round" />
+                            <path class="sunPath" d="M12 21V19" stroke="#223344" stroke-width="2" stroke-linecap="round" />
+                            <path class="sunPath" d="M16.95 7.04996L18.3643 5.63574" stroke="#223344" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path class="sunPath" d="M5.63608 18.3644L7.05029 16.9502" stroke="#223344" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path class="sunPath" d="M19 12L21 12" stroke="#223344" stroke-width="2" stroke-linecap="round" />
+                            <path class="sunPath" d="M3 12L5 12" stroke="#223344" stroke-width="2" stroke-linecap="round" />
+                            <path class="sunPath" d="M16.95 16.95L18.3643 18.3643" stroke="#223344" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path class="sunPath" d="M5.63608 5.63559L7.05029 7.0498" stroke="#223344" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <a onclick="showSidebar()" href="#"><svg id="showSidebar" xmlns="http://www.w3.org/2000/svg" height="32px"
+            viewBox="0 -960 960 960" width="32px" fill="#333">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg></a>
+
+    <script>
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+        }
+
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'block';
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle('dark');
+            const logo = document.getElementById('logo');
+            if (document.body.classList.contains('dark')) {
+                logo.src = 'logoDark.svg';
+            } else {
+                logo.src = 'logoLight.svg';
+            }
+
+            document.getElementById('hideSidebar').style.fill = document.body.classList.contains('dark') ? '#F2F9FE' : '#333';
+            document.getElementById('showSidebar').style.fill = document.body.classList.contains('dark') ? '#F2F9FE' : '#333';
+
+            function changeSunColor(color) {
+                const sunCircle = document.getElementById('sunCircle');
+                sunCircle.style.fill = color;
+                const sunPaths = document.querySelectorAll('.sunPath');
+                sunPaths.forEach(i => {
+                    i.style.stroke = color;
+                });
+            }
+            changeSunColor(document.body.classList.contains('dark') ? '#F2F9FE' : '#333');
+        }
+    </script>
+</body>
+
+</html>
