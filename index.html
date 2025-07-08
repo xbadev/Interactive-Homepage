@@ -316,7 +316,21 @@
             const logo = document.getElementById('logo');
             if (document.body.classList.contains('dark')) {
                 logo.src = 'logoDark.svg';
+                localStorage.setItem('mode', 'dark'); 
             } else {
+                logo.src = 'logoLight.svg';
+                localStorage.setItem('mode', 'light');
+            }
+        }
+
+        window.onload = function() {
+            const mode = localStorage.getItem('mode');
+            const logo = document.getElementById('logo');
+            if (mode === 'dark') {
+                document.body.classList.add('dark');
+                logo.src = 'logoDark.svg';
+            } else {
+                document.body.classList.remove('dark');
                 logo.src = 'logoLight.svg';
             }
         }
